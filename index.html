@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css"> 
+    <title>智慧農業監測系統</title>
+    <style>
+       
+        .watermark {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; 
+            z-index: -1; 
+        }
+
+        .watermark img {
+            width: 900px; 
+            height: auto;
+            opacity: 0.1; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="watermark">
+        <img src="浮水印.png" alt="浮水印" >
+    </div>
+
+    <header>
+        <button id="menuButton">
+            <img id="menuIcon" src="選單.png" alt="菜單" width="30" height="30">
+        </button>
+        <div class="title-container">
+            <h1>智慧農業監測系統</h1>
+            <hr>
+            <h2>台中科大智慧農業實驗場域</h2>
+        </div>
+        <img src="系徽.jpg" alt="" width="100" height="auto"> 
+    </header>
+    <div id="sideMenu" class="side-menu">
+        <ul>
+            <li><a href="#">數值資料</a></li>
+            <li><a href="#">即時影像</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div class="data-container">
+            <div class="data-item">光照度<br>（Lux）<br>350</div>
+            <div class="data-item">溫度<br>（攝氏）<br>25</div>
+            <div class="data-item">濕度<br>（％）<br>60</div>
+            <div class="data-item">大氣壓力<br>（Pa）<br>101.325</div>
+            <div class="data-item">二氧化碳<br>（ppm）<br>360</div>
+            <div class="data-item">土壤溫度<br>（攝氏）<br>25</div>
+            <div class="data-item">土壤濕度<br>（％）<br>65</div>
+            <div class="data-item">土壤EC值<br>（uS/cm）<br>3</div>
+        </div>
+    </div>
+
+    <script>
+        var sideMenu = document.getElementById("sideMenu");
+        var menuIcon = document.getElementById("menuIcon");
+
+        document.getElementById("menuButton").addEventListener("click", function() {
+            if (sideMenu.style.width === "0px" || sideMenu.style.width === "") {
+                sideMenu.style.width = "250px";
+                menuIcon.src = "選單.png";
+                document.querySelector(".content-container").style.marginLeft = "250px";
+            } else {
+                sideMenu.style.width = "0";
+                menuIcon.src = "選單.png";
+                document.querySelector(".content-container").style.marginLeft = "0";
+            }
+        });
+    </script>
+</body>
+</html>
